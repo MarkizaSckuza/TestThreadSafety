@@ -11,9 +11,11 @@ public class Main {
 
         SharedCollection.initialize();
 
-        ExecutorService executor = Executors.newFixedThreadPool(2);
+        ExecutorService executor = Executors.newFixedThreadPool(3);
 
         executor.execute(new Reader());
+//        ListModifier.modifyList();
+        executor.execute(new Remover());
         executor.execute(new Remover());
         executor.shutdown();
     }
